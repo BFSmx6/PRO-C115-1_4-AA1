@@ -8,8 +8,8 @@ import shutil
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
-from_dir = "C:/Users/preet/Downloads"              # Add the path of you "Downloads" folder.
-to_dir = "C:/Users/preet/Desktop/Downloaded_Files" #Create "Document_Files" folder in your Desktop and update the path accordingly.
+from_dir = "C:/Users/preet/Downloads"              # Agrega la ruta de tu carpeta de "Descargas".
+to_dir = "C:/Users/preet/Desktop/Downloaded_Files" #Crea la carpeta "Documentos" en tu escritorio y actualiza la ruta.
 
 
 dir_tree = {
@@ -19,7 +19,7 @@ dir_tree = {
     "Setup_Files": ['.exe', '.bin', '.cmd', '.msi', '.dmg']
 }
 
-# Event Hanlder Class
+# Evento clase Hanlder 
 
 class FileMovementHandler(FileSystemEventHandler):
 
@@ -33,23 +33,23 @@ class FileMovementHandler(FileSystemEventHandler):
             time.sleep(1)
 
             
-# Initialize Event Handler Class
+# inicializa el evento clase Handler 
 event_handler = FileMovementHandler()
 
-# Initialize Observer
+# Inicializa Observer
 observer = Observer()
 
-# Schedule the Observer
+# Programa Observer
 observer.schedule(event_handler, from_dir, recursive=True)
 
-# Start the Observer
+# Inicia Observer
 observer.start()
 
 try:
     while True:
         time.sleep(2)
-        print("running...")
+        print("ejecutando...")
 except KeyboardInterrupt:
-    print("stopped!")
+    print("detenido!")
     observer.stop()
 
