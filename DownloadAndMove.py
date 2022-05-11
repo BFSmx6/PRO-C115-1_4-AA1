@@ -19,7 +19,7 @@ dir_tree = {
     "Setup_Files": ['.exe', '.bin', '.cmd', '.msi', '.dmg']
 }
 
-# Evento clase Hanlder 
+# Clase Event Hanlder 
 
 class FileMovementHandler(FileSystemEventHandler):
 
@@ -33,7 +33,7 @@ class FileMovementHandler(FileSystemEventHandler):
             time.sleep(1)
 
             
-# inicializa el evento clase Handler 
+# inicializa la clase Event Handler 
 event_handler = FileMovementHandler()
 
 # Inicializa Observer
@@ -50,6 +50,6 @@ try:
         time.sleep(2)
         print("ejecutando...")
 except KeyboardInterrupt:
-    print("detenido!")
+    print("¡detenido!")
     observer.stop()
 
